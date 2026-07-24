@@ -18,6 +18,8 @@ jobs:
           git clone https://codeberg.org/verybinary/mohmoh-client temp
           cp -r temp/. ./
           rm -rf temp
+          git config --global user.email "sdfgjkheslghalgaef@126.com"
+          git config --global user.name "Mirrorbot"
           git add -A
           git commit -m "Mirror"
           git push
