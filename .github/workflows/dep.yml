@@ -16,6 +16,7 @@ jobs:
       - name: Mirror
         run: |
           git clone https://codeberg.org/verybinary/mohmoh-client temp
+          rm -rf temp/.git
           cp -r temp/. ./
           rm -rf temp
           git config --global user.email "sdfgjkheslghalgaef@126.com"
