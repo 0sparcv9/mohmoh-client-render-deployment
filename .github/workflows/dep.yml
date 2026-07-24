@@ -1,4 +1,4 @@
-name: 做东西
+name: Mirror
 
 on:
   workflow_dispatch:
@@ -10,11 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: dddadsada
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v4
+        
+      - name: Mirror
         run: |
-          git clone --mirror https://codeberg.org/verybinary/mohmoh-client.git temp
-          cd temp
-          git remote set-url origin https://${{ secrets.GH_USERNAME }}:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push --mirror --force
+          git clone https://codeberg.org/verybinary/mohmoh-client temp
+          cp -r temp/. ./
+          rm -rf temp
+          git add -A
+          git commit -m "Mirror"
+          git push
