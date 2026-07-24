@@ -1,0 +1,20 @@
+name: 做东西
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: dddadsada
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
+        run: |
+          git clone --mirror https://codeberg.org/verybinary/mohmoh-client.git temp
+          cd temp
+          git remote set-url origin https://${{ secrets.GH_USERNAME }}:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git push --mirror --force
