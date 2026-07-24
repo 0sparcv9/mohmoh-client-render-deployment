@@ -1,0 +1,33 @@
+{
+  "short_name": "Mohmoh Vanilla",
+  "name": "Mohmoh Vanilla",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.global/53a4f50a-0528-4393-b3c2-c1f75b98e7d8/pwa-icon192x192.png?v=1689006225225",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn.glitch.global/53a4f50a-0528-4393-b3c2-c1f75b98e7d8/pwa-icon192x192.png?v=1689006225225",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.mohmoh.onrender",
+      "url": "https://mohmoh.onrender.com"
+    },
+    {
+      "platform": "webapp",
+      "url": "./manifest.json"
+    }
+  ],
+  "start_url": "./?pwa",
+  "background_color": "#3367D6",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "gcm_sender_id": "482941778795",
+  "theme_color": "#3367D6"
+}
