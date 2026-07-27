@@ -80,6 +80,8 @@ XMLHttpRequest.prototype.open = new Proxy(XMLHttpRequest.prototype.open, {
 
     if (/serverData/gm.test(args[1])) args[1] = "data:," + JSON.stringify(window.vultr);
 
+    if (/site\.ac/gm.test(args[1])) args[1] = "data:,console.log('removed site.ac\'s IP logger for you')";
+
     return target.apply(that, args);
   }
 });
